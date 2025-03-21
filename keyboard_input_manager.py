@@ -106,7 +106,7 @@ async def main():
     loop = asyncio.get_running_loop()
     keyboard_manager = KeyboardEventManager(loop=loop)
     node = Node("http://172.22.7.122:7000")
-    await node.connect()
+    await node.connect(["/control", "/vision-channel-1", "/vision-channel-2", "/data"])
 
     async def on_a_press():
         print("'a' key pressed!")
